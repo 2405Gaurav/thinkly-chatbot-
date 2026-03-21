@@ -1,0 +1,38 @@
+export const modes = [
+  {
+    text: "DSA Problems.",
+    color: "#7c3aed",
+    bg: "#f3eeff",
+    icon: "🧠",
+    label: "Practice DSA",
+    href: "/chat?mode=dsa",
+    desc: "FAANG-level coding questions with hints, complexity analysis, and step-by-step guidance.",
+  },
+  {
+    text: "HR Interviews.",
+    color: "#0891b2",
+    bg: "#ecfeff",
+    icon: "💬",
+    label: "HR Questions",
+    href: "/chat?mode=hr",
+    desc: "Behavioral question practice with STAR method feedback and confidence scoring.",
+  },
+  {
+    text: "Mock Rounds.",
+    color: "#ea580c",
+    bg: "#fff7ed",
+    icon: "🎯",
+    label: "Mock Interview",
+    href: "/chat?mode=mock",
+    desc: "Full interview simulation with scorecard, verdict, and detailed improvement plan.",
+  },
+  {
+    text: "Your Resume.",
+    color: "#059669",
+    bg: "#ecfdf5",
+    icon: "📄",
+    label: "Resume Review",
+    href: "/chat?mode=resume",
+    desc: "Section-by-section resume review with ATS tips and actionable rewrites.",
+  },
+];

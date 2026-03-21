@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 PlacementGPT — AI Placement Mentor
 
-## Getting Started
+> **Crack your placement interviews with AI-powered mentorship.** Practice DSA, HR questions, mock interviews, and get your resume reviewed — all powered by GPT.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ What is PlacementGPT?
+
+PlacementGPT is a purpose-built AI placement mentor designed specifically for **Indian college students** preparing for campus placements. It's not a generic chatbot — it's a **4-in-1 interview preparation tool**.
+
+---
+
+## 🎯 Features
+
+### 🧠 DSA Interview Mode
+- Get FAANG-level DSA questions
+- Progressive hints (subtle → strong)
+- Complexity analysis after every solution
+- Topic coverage: Arrays, DP, Graphs, Trees, and more
+
+### 💬 HR Interview Mode
+- One question at a time
+- STAR method feedback
+- Score 1-10 on every answer
+- Company-specific tips
+
+### 🎯 Mock Interview Mode
+- Full interview simulation (Intro → DSA → HR → Q&A)
+- Comprehensive scorecard with verdict
+- Score breakdown: Technical, Problem Solving, Communication, Confidence
+- Verdict: STRONG HIRE / HIRE / LEAN HIRE / NO HIRE
+
+### 📄 Resume Review Mode
+- Section-by-section analysis
+- Score out of 10 for each section
+- Power words & quantifiable metrics suggestions
+- Tailored for Product / Service / Startup companies
+
+### 🎨 Premium UI/UX
+- Dark mode with gradient backgrounds
+- Glassmorphism effects
+- Animated typing indicator
+- Smooth message animations
+- Custom markdown rendering with code blocks
+
+---
+
+## ⚙️ Tech Stack
+
+| Tech | Purpose |
+|------|---------|
+| **Next.js 16** (App Router) | Full-stack React framework |
+| **TypeScript** | Type safety |
+| **Tailwind CSS v4** | Styling |
+| **Vercel AI SDK v6** | Streaming AI responses |
+| **OpenAI GPT-4o-mini** | LLM backbone |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx              # Landing page
+│   ├── layout.tsx            # Root layout
+│   ├── globals.css           # Global styles
+│   ├── chat/
+│   │   └── page.tsx          # Main chat UI
+│   └── api/
+│       └── chat/
+│           └── route.ts      # API route (streaming)
+├── components/
+│   ├── ChatBubble.tsx        # Chat message bubble with markdown
+│   ├── ModeSelector.tsx      # Mode pill selector
+│   ├── TypingIndicator.tsx   # Animated typing indicator
+│   └── PromptSuggestions.tsx # Suggested prompt chips
+└── lib/
+    ├── promptBuilder.ts      # System prompts per mode
+    └── openai.ts             # OpenAI SDK config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18+
+- npm
+- An OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
+cd thinkly-chatbot
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 2. Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 3. Set up environment variables
+# Edit .env.local and add your OpenAI API key
+# OPENAI_API_KEY=sk-your-key-here
 
-## Deploy on Vercel
+# 4. Run the development server
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🌐 Deployment (Vercel)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) → Import Project
+3. Add environment variable: `OPENAI_API_KEY`
+4. Deploy!
+
+---
+
+## 🧠 Prompt Engineering
+
+The backbone of PlacementGPT is its **mode-specific system prompts**. Each mode has a carefully crafted prompt in `src/lib/promptBuilder.ts` that transforms GPT into a specialized interviewer/mentor.
+
+---
+
+## 📝 Why This Was Built
+
+Indian campus placements are unique — they have a specific structure (DSA + HR + PI), companies have different expectations, and students need targeted preparation. PlacementGPT solves this by providing a **dedicated AI mentor** that understands the Indian placement ecosystem.
+
+---
+
+## 📄 License
+
+MIT License — feel free to use, modify, and distribute.
