@@ -1,5 +1,5 @@
 import { streamText, convertToModelMessages, UIMessage } from "ai";
-import { openai } from "@/lib/openai";
+import { google } from "@/lib/gemini";
 import { getSystemPrompt, ChatMode } from "@/lib/promptBuilder";
 
 export async function POST(req: Request) {
@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const modelMessages = await convertToModelMessages(messages);
 
     const result = streamText({
-      model: openai("gpt-4o-mini"),
+      model: google("gemini-2.5-flash"),
       system: systemPrompt,
       messages: modelMessages,
     });
