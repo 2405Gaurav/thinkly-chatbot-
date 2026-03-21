@@ -133,7 +133,11 @@ The backbone of PlacementGPT is its **mode-specific system prompts**. Each mode 
 
 ## 📝 Why This Was Built
 
-Indian campus placements are unique — they have a specific structure (DSA + HR + PI), companies have different expectations, and students need targeted preparation. PlacementGPT solves this by providing a **dedicated AI mentor** that understands the Indian placement ecosystem.
+Indian campus placements are unique — they have a specific structure (DSA + HR + PI), companies have different expectations, and students need targeted preparation.
+
+As a final year student going through placements myself, I've lived this problem firsthand. The anxiety of not knowing what to practice, sitting through mock interviews with no real feedback, submitting resumes into the void, and never quite feeling "ready" — it's exhausting. Generic AI tools don't get it. They don't know what an Indian product company expects vs a service-based one, they don't simulate the pressure of a real campus interview round, and they certainly don't give you the blunt, structured feedback you actually need to improve.
+
+PlacementGPT was built out of that frustration — a **dedicated AI mentor** that understands the Indian placement ecosystem, speaks the language of campus hiring, and gives every student access to the kind of preparation that used to require expensive coaching or knowing the right people.
 
 ---
 
