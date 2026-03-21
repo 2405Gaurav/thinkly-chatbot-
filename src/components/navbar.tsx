@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const MODE_COLORS: Record<string, string> = {
   "/chat": "#7c3aed",
@@ -88,7 +89,7 @@ export default function Navbar() {
               className="w-8 h-8 rounded-lg flex items-center justify-center text-sm transition-transform duration-300 group-hover:scale-110"
               style={{ background: `${accentColor}18` }}
             >
-              🚀
+              <Image src="/logo.png" alt="PlacementGPT Logo" width={32} height={32} />
             </span>
             <span
               className="text-base font-black tracking-tight text-gray-800"

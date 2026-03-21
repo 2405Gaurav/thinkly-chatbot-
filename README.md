@@ -1,12 +1,15 @@
 # 🚀 PlacementGPT — AI Placement Mentor
 
-> **Crack your placement interviews with AI-powered mentorship.** Practice DSA, HR questions, mock interviews, and get your resume reviewed — all powered by GPT.
+> **Crack your placement interviews with AI-powered mentorship.** Practice DSA, HR questions, mock interviews, and get your resume reviewed — all powered by Gemini.
+
+🌐 **Live Demo:** [thinkly-chatbot.thegauravthakur.in](https://thinkly-chatbot.thegauravthakur.in/)
+👨‍💻 **Built by:** [Gaurav Thakur](https://thegauravthakur.in/)
 
 ---
 
 ## ✨ What is PlacementGPT?
 
-PlacementGPT is a purpose-built AI placement mentor designed specifically for **Indian college students** preparing for campus placements. It's not a generic chatbot — it's a **4-in-1 interview preparation tool**.
+PlacementGPT is a purpose-built AI placement mentor designed specifically for **Indian college students** preparing for campus placements. It's not a generic chatbot — it's a **4-in-1 interview preparation tool**, powered by **Google Gemini 2.0 Flash**.
 
 ---
 
@@ -21,7 +24,7 @@ PlacementGPT is a purpose-built AI placement mentor designed specifically for **
 ### 💬 HR Interview Mode
 - One question at a time
 - STAR method feedback
-- Score 1-10 on every answer
+- Score 1–10 on every answer
 - Company-specific tips
 
 ### 🎯 Mock Interview Mode
@@ -37,8 +40,8 @@ PlacementGPT is a purpose-built AI placement mentor designed specifically for **
 - Tailored for Product / Service / Startup companies
 
 ### 🎨 Premium UI/UX
-- Dark mode with gradient backgrounds
-- Glassmorphism effects
+- Light theme with study-focused design
+- Collapsible sidebar for mode switching
 - Animated typing indicator
 - Smooth message animations
 - Custom markdown rendering with code blocks
@@ -53,7 +56,7 @@ PlacementGPT is a purpose-built AI placement mentor designed specifically for **
 | **TypeScript** | Type safety |
 | **Tailwind CSS v4** | Styling |
 | **Vercel AI SDK v6** | Streaming AI responses |
-| **OpenAI GPT-4o-mini** | LLM backbone |
+| **Google Gemini 2.0 Flash** | LLM backbone |
 
 ---
 
@@ -66,7 +69,7 @@ src/
 │   ├── layout.tsx            # Root layout
 │   ├── globals.css           # Global styles
 │   ├── chat/
-│   │   └── page.tsx          # Main chat UI
+│   │   └── page.tsx          # Main chat UI with sidebar
 │   └── api/
 │       └── chat/
 │           └── route.ts      # API route (streaming)
@@ -74,10 +77,11 @@ src/
 │   ├── ChatBubble.tsx        # Chat message bubble with markdown
 │   ├── ModeSelector.tsx      # Mode pill selector
 │   ├── TypingIndicator.tsx   # Animated typing indicator
-│   └── PromptSuggestions.tsx # Suggested prompt chips
+│   ├── PromptSuggestions.tsx # Suggested prompt chips
+│   └── navbar.tsx            # Top navigation bar
 └── lib/
     ├── promptBuilder.ts      # System prompts per mode
-    └── openai.ts             # OpenAI SDK config
+    └── gemini.ts             # Google Gemini SDK config
 ```
 
 ---
@@ -87,7 +91,7 @@ src/
 ### Prerequisites
 - Node.js 18+
 - npm
-- An OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
+- A Google Gemini API key ([Get one here](https://aistudio.google.com/))
 
 ### Installation
 
@@ -100,8 +104,9 @@ cd thinkly-chatbot
 npm install
 
 # 3. Set up environment variables
-# Edit .env.local and add your OpenAI API key
-# OPENAI_API_KEY=sk-your-key-here
+cp .env.example .env.local
+# Edit .env.local and add your Gemini API key:
+# GOOGLE_GENERATIVE_AI_API_KEY=your-key-here
 
 # 4. Run the development server
 npm run dev
@@ -115,20 +120,28 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com) → Import Project
-3. Add environment variable: `OPENAI_API_KEY`
+3. Add environment variable: `GOOGLE_GENERATIVE_AI_API_KEY`
 4. Deploy!
 
 ---
 
 ## 🧠 Prompt Engineering
 
-The backbone of PlacementGPT is its **mode-specific system prompts**. Each mode has a carefully crafted prompt in `src/lib/promptBuilder.ts` that transforms GPT into a specialized interviewer/mentor.
+The backbone of PlacementGPT is its **mode-specific system prompts**. Each mode has a carefully crafted prompt in `src/lib/promptBuilder.ts` that transforms Gemini into a specialized interviewer/mentor.
 
 ---
 
 ## 📝 Why This Was Built
 
 Indian campus placements are unique — they have a specific structure (DSA + HR + PI), companies have different expectations, and students need targeted preparation. PlacementGPT solves this by providing a **dedicated AI mentor** that understands the Indian placement ecosystem.
+
+---
+
+## 👨‍💻 Author
+
+**Gaurav Thakur**
+- Portfolio: [thegauravthakur.in](https://thegauravthakur.in/)
+- GitHub: [@2405Gaurav](https://github.com/2405Gaurav)
 
 ---
 
