@@ -1,4 +1,6 @@
-function DSAIllustration() {
+import React from "react";
+
+export function DSAIllustration() {
   return (
     <svg viewBox="0 0 420 420" className="w-full h-full drop-shadow-xl">
       <defs>
@@ -11,27 +13,50 @@ function DSAIllustration() {
           <polygon points="9,15.6 27,15.6 18,31.2" fill="#ddd6fe" opacity="0.4"/>
         </pattern>
       </defs>
-      <circle cx="210" cy="80" r="32" fill="url(#dp)" />
-      <line x1="210" y1="112" x2="130" y2="175" stroke="#7c3aed" strokeWidth="3" opacity="0.4"/>
-      <line x1="210" y1="112" x2="290" y2="175" stroke="#7c3aed" strokeWidth="3" opacity="0.4"/>
-      <circle cx="130" cy="200" r="26" fill="url(#dp)" opacity="0.85"/>
-      <circle cx="290" cy="200" r="26" fill="url(#dp)" opacity="0.85"/>
-      <line x1="130" y1="226" x2="80" y2="285" stroke="#7c3aed" strokeWidth="2.5" opacity="0.35"/>
-      <line x1="130" y1="226" x2="180" y2="285" stroke="#7c3aed" strokeWidth="2.5" opacity="0.35"/>
-      <line x1="290" y1="226" x2="240" y2="285" stroke="#7c3aed" strokeWidth="2.5" opacity="0.35"/>
-      <line x1="290" y1="226" x2="340" y2="285" stroke="#7c3aed" strokeWidth="2.5" opacity="0.35"/>
-      <circle cx="80" cy="308" r="20" fill="url(#dp)" opacity="0.7"/>
-      <circle cx="180" cy="308" r="20" fill="url(#dp)" opacity="0.7"/>
-      <circle cx="240" cy="308" r="20" fill="url(#dp)" opacity="0.7"/>
-      <circle cx="340" cy="308" r="20" fill="url(#dp)" opacity="0.7"/>
-      <text x="210" y="85" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">root</text>
-      <text x="130" y="205" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">L</text>
-      <text x="290" y="205" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">R</text>
+      
+      {/* Background Subtle Grid */}
+      <rect width="420" height="420" fill="#f5f3ff" opacity="0.5" />
+
+      {/* Tree Connections */}
+      <g stroke="#a78bfa" strokeWidth="4" strokeLinecap="round">
+        <line x1="210" y1="70" x2="110" y2="140" opacity="0.5"/>
+        {/* Highlighted Path */}
+        <line x1="210" y1="70" x2="310" y2="140" stroke="#7c3aed" strokeWidth="6" />
+        <line x1="310" y1="140" x2="250" y2="220" stroke="#7c3aed" strokeWidth="6" />
+        
+        <line x1="110" y1="140" x2="50" y2="220" opacity="0.5"/>
+        <line x1="110" y1="140" x2="170" y2="220" opacity="0.5"/>
+        <line x1="310" y1="140" x2="370" y2="220" opacity="0.5"/>
+      </g>
+
+      {/* Tree Nodes */}
+      <circle cx="210" cy="70" r="28" fill="url(#dp)" />
+      <circle cx="110" cy="140" r="24" fill="white" stroke="#8b5cf6" strokeWidth="4" />
+      <circle cx="310" cy="140" r="28" fill="url(#dp)" stroke="#ddd6fe" strokeWidth="4" />
+      
+      <circle cx="50" cy="220" r="20" fill="white" stroke="#c4b5fd" strokeWidth="3" />
+      <circle cx="170" cy="220" r="20" fill="white" stroke="#c4b5fd" strokeWidth="3" />
+      <circle cx="250" cy="220" r="24" fill="url(#dp)" stroke="#ddd6fe" strokeWidth="4"/>
+      <circle cx="370" cy="220" r="20" fill="white" stroke="#c4b5fd" strokeWidth="3" />
+
+      {/* Array Data Structure at Bottom */}
+      <g transform="translate(90, 310)">
+        <rect x="0" y="0" width="240" height="46" rx="8" fill="white" stroke="#a78bfa" strokeWidth="3" />
+        <line x1="40" y1="0" x2="40" y2="46" stroke="#c4b5fd" strokeWidth="2" />
+        <line x1="80" y1="0" x2="80" y2="46" stroke="#c4b5fd" strokeWidth="2" />
+        <line x1="120" y1="0" x2="120" y2="46" stroke="#c4b5fd" strokeWidth="2" />
+        <line x1="160" y1="0" x2="160" y2="46" stroke="#c4b5fd" strokeWidth="2" />
+        <line x1="200" y1="0" x2="200" y2="46" stroke="#c4b5fd" strokeWidth="2" />
+        
+        {/* Highlighted Array Element */}
+        <rect x="160" y="0" width="40" height="46" fill="url(#dp)" opacity="0.8" />
+        <text x="180" y="28" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">i</text>
+      </g>
     </svg>
   );
 }
 
-function HRIllustration() {
+export function HRIllustration() {
   return (
     <svg viewBox="0 0 420 420" className="w-full h-full drop-shadow-xl">
       <defs>
@@ -44,25 +69,47 @@ function HRIllustration() {
           <polygon points="9,15.6 27,15.6 18,31.2" fill="#cffafe" opacity="0.4"/>
         </pattern>
       </defs>
-      <rect x="60" y="80" width="220" height="80" rx="18" fill="url(#hp)"/>
-      <polygon points="100,160 80,188 135,160" fill="#0891b2"/>
-      <rect x="140" y="200" width="220" height="70" rx="18" fill="url(#hp)" opacity="0.75"/>
-      <polygon points="320,270 342,294 288,270" fill="#06b6d4" opacity="0.75"/>
-      <rect x="60" y="305" width="200" height="65" rx="18" fill="url(#hp)" opacity="0.6"/>
-      <polygon points="95,370 73,396 138,370" fill="#0891b2" opacity="0.6"/>
-      <text x="90" y="122" fill="white" fontSize="13" fontWeight="bold" opacity="0.95">Situation ✦</text>
-      <text x="172" y="240" fill="white" fontSize="13" fontWeight="bold" opacity="0.9">Task ✦</text>
-      <text x="90" y="342" fill="white" fontSize="13" fontWeight="bold" opacity="0.85">Action ✦</text>
+
+      {/* Connecting Flow Arrows */}
+      <g stroke="#22d3ee" strokeWidth="4" strokeLinecap="round" strokeDasharray="8 8" fill="none">
+        <path d="M 190 120 L 230 120" />
+        <path d="M 300 190 L 300 230" />
+        <path d="M 230 300 L 190 300" />
+      </g>
+
+      {/* S.T.A.R. Method Flow */}
+      {/* S - Situation */}
+      <rect x="60" y="60" width="120" height="120" rx="20" fill="url(#hp)" />
+      <text x="120" y="115" textAnchor="middle" fill="white" fontSize="42" fontWeight="900" opacity="0.3">S</text>
+      <text x="120" y="135" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">Situation</text>
+
+      {/* T - Task */}
+      <rect x="240" y="60" width="120" height="120" rx="20" fill="white" stroke="#06b6d4" strokeWidth="3" />
+      <text x="300" y="115" textAnchor="middle" fill="#0891b2" fontSize="42" fontWeight="900" opacity="0.2">T</text>
+      <text x="300" y="135" textAnchor="middle" fill="#0e7490" fontSize="14" fontWeight="bold">Task</text>
+
+      {/* R - Result */}
+      <rect x="60" y="240" width="120" height="120" rx="20" fill="white" stroke="#06b6d4" strokeWidth="3" />
+      <text x="120" y="295" textAnchor="middle" fill="#0891b2" fontSize="42" fontWeight="900" opacity="0.2">R</text>
+      <text x="120" y="315" textAnchor="middle" fill="#0e7490" fontSize="14" fontWeight="bold">Result</text>
+
+      {/* A - Action */}
+      <rect x="240" y="240" width="120" height="120" rx="20" fill="url(#hp)" />
+      <text x="300" y="295" textAnchor="middle" fill="white" fontSize="42" fontWeight="900" opacity="0.3">A</text>
+      <text x="300" y="315" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">Action</text>
+
+      {/* Central Checkpoint */}
+      <circle cx="210" cy="210" r="24" fill="#0891b2" stroke="white" strokeWidth="4" className="drop-shadow-md"/>
+      <path d="M 198 210 L 206 218 L 222 202" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 type ScoreRow = [label: string, pct: number];
 
-function MockIllustration() {
+export function MockIllustration() {
   const rows: ScoreRow[] = [
-    ["Technical", 0.9],
-    ["Communication", 0.75],
+    ["Technical", 0.9],["Communication", 0.75],
     ["Problem Solving", 0.85],
   ];
 
@@ -78,35 +125,57 @@ function MockIllustration() {
           <polygon points="9,15.6 27,15.6 18,31.2" fill="#ffedd5" opacity="0.4"/>
         </pattern>
       </defs>
-      <rect x="90" y="55" width="240" height="310" rx="16" fill="white" opacity="0.6" stroke="#ea580c" strokeWidth="1.5" strokeOpacity="0.3"/>
-      <circle cx="210" cy="185" r="72" fill="none" stroke="#fed7aa" strokeWidth="14" opacity="0.5"/>
-      <circle
-        cx="210" cy="185" r="72"
-        fill="none" stroke="url(#mp)" strokeWidth="14"
-        strokeDasharray="452" strokeDashoffset="113"
-        strokeLinecap="round"
-        transform="rotate(-90 210 185)"
-      />
-      <text x="210" y="178" textAnchor="middle" fill="#ea580c" fontSize="30" fontWeight="900">85</text>
-      <text x="210" y="200" textAnchor="middle" fill="#c2410c" fontSize="11" fontWeight="600">/ 100</text>
-      <text x="210" y="222" textAnchor="middle" fill="#f97316" fontSize="10">Score</text>
 
+      {/* Main Video Call App Window */}
+      <rect x="20" y="40" width="380" height="340" rx="16" fill="white" stroke="#fed7aa" strokeWidth="2" />
+      <rect x="20" y="40" width="380" height="30" fill="#fff7ed" rx="16" />
+      <rect x="20" y="60" width="380" height="10" fill="#fff7ed" />
+      <circle cx="40" cy="55" r="4" fill="#fb923c" />
+      <circle cx="55" cy="55" r="4" fill="#fdba74" />
+      <circle cx="70" cy="55" r="4" fill="#fed7aa" />
+
+      {/* Video Feed (Left Side) */}
+      <rect x="35" y="85" width="160" height="275" rx="12" fill="#ffedd5" />
+      <rect x="45" y="95" width="45" height="18" rx="4" fill="#ea580c" opacity="0.8"/>
+      <circle cx="53" cy="104" r="3" fill="white" />
+      <text x="62" y="107" fill="white" fontSize="9" fontWeight="bold">REC</text>
+      
+      {/* Candidate Silhouette */}
+      <circle cx="115" cy="190" r="35" fill="#f97316" opacity="0.4" />
+      <path d="M 50 290 Q 115 210 180 290 Z" fill="#f97316" opacity="0.4" />
+
+      {/* Scorecard Dashboard (Right Side) */}
+      <rect x="210" y="85" width="175" height="275" rx="12" fill="white" stroke="#fed7aa" strokeWidth="1.5" className="drop-shadow-sm" />
+      
+      {/* Circular Score */}
+      <circle cx="297" cy="155" r="45" fill="none" stroke="#ffedd5" strokeWidth="10" />
+      <circle
+        cx="297" cy="155" r="45"
+        fill="none" stroke="url(#mp)" strokeWidth="10"
+        strokeDasharray="282.7" strokeDashoffset="42.4"
+        strokeLinecap="round"
+        transform="rotate(-90 297 155)"
+      />
+      <text x="297" y="153" textAnchor="middle" fill="#ea580c" fontSize="24" fontWeight="900">85</text>
+      <text x="297" y="168" textAnchor="middle" fill="#c2410c" fontSize="10" fontWeight="600">Score</text>
+
+      {/* Metric Bars */}
       {rows.map(([label, pct], i) => (
-        <g key={label} transform={`translate(112, ${300 + i * 22})`}>
-          <rect width="196" height="7" rx="3.5" fill="#fed7aa" opacity="0.5"/>
-          <rect width={196 * pct} height="7" rx="3.5" fill="url(#mp)"/>
-          <text x="0" y="-4" fill="#9a3412" fontSize="8.5" fontWeight="600">{label}</text>
+        <g key={label} transform={`translate(225, ${230 + i * 35})`}>
+          <text x="0" y="-6" fill="#9a3412" fontSize="9" fontWeight="700">{label}</text>
+          <rect width="145" height="8" rx="4" fill="#ffedd5" />
+          <rect width={145 * pct} height="8" rx="4" fill="url(#mp)" />
         </g>
       ))}
     </svg>
   );
 }
 
-function ResumeIllustration() {
-  const sections: { y: number; label: string; lw: number }[] = [
-    { y: 122, label: "Experience", lw: 62 },
-    { y: 212, label: "Education",  lw: 56 },
-    { y: 298, label: "Skills",     lw: 36 },
+export function ResumeIllustration() {
+  const sections =[
+    { y: 135, lw: 70 },
+    { y: 225, lw: 55 },
+    { y: 315, lw: 40 },
   ];
 
   return (
@@ -120,27 +189,51 @@ function ResumeIllustration() {
           <polygon points="9,15.6 18,31.2 0,31.2" fill="#a7f3d0" opacity="0.5"/>
           <polygon points="9,15.6 27,15.6 18,31.2" fill="#d1fae5" opacity="0.4"/>
         </pattern>
+        <linearGradient id="scanGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#34d399" stopOpacity="0" />
+          <stop offset="100%" stopColor="#059669" stopOpacity="0.3" />
+        </linearGradient>
       </defs>
-      <rect x="95" y="45" width="230" height="330" rx="12" fill="white" opacity="0.7"/>
-      <rect x="95" y="45" width="230" height="58" rx="12" fill="url(#rp)"/>
-      <rect x="95" y="84" width="230" height="19" rx="0" fill="url(#rp)"/>
-      <circle cx="132" cy="73" r="20" fill="white" opacity="0.25"/>
-      <rect x="162" y="60" width="108" height="10" rx="3" fill="white" opacity="0.75"/>
-      <rect x="162" y="76" width="74" height="7" rx="3" fill="white" opacity="0.5"/>
 
-      {sections.map(({ y, label, lw }) => (
-        <g key={label}>
-          <rect x="115" y={y}      width={lw}  height="8" rx="3"   fill="#059669" opacity="0.7"/>
-          <rect x="115" y={y + 18} width="185" height="5" rx="2.5" fill="#d1fae5"/>
-          <rect x="115" y={y + 28} width="148" height="5" rx="2.5" fill="#d1fae5"/>
-          <rect x="115" y={y + 38} width="168" height="5" rx="2.5" fill="#d1fae5"/>
+      {/* Document Base */}
+      <rect x="95" y="30" width="230" height="350" rx="8" fill="white" stroke="#e5e7eb" strokeWidth="2" />
+      
+      {/* Header Profile Section */}
+      <rect x="95" y="30" width="230" height="65" rx="8" fill="url(#rp)" />
+      <rect x="95" y="85" width="230" height="10" fill="url(#rp)" />
+      <circle cx="135" cy="62" r="22" fill="white" opacity="0.3" />
+      <rect x="170" y="50" width="110" height="10" rx="4" fill="white" opacity="0.9" />
+      <rect x="170" y="68" width="70" height="6" rx="3" fill="white" opacity="0.6" />
+
+      {/* Text Blocks (Experience, Education, Skills) */}
+      {sections.map(({ y, lw }, idx) => (
+        <g key={idx}>
+          <rect x="115" y={y}      width={lw}  height="9" rx="4.5" fill="#059669" opacity="0.8"/>
+          <rect x="115" y={y + 18} width="180" height="6" rx="3"   fill="#d1fae5"/>
+          <rect x="115" y={y + 30} width="150" height="6" rx="3"   fill="#d1fae5"/>
+          <rect x="115" y={y + 42} width="165" height="6" rx="3"   fill="#d1fae5"/>
         </g>
       ))}
 
-      <rect x="258" y="355" width="65" height="19" rx="9.5" fill="#059669" opacity="0.85"/>
-      <text x="290" y="368" textAnchor="middle" fill="white" fontSize="9" fontWeight="700">ATS ✓</text>
+      {/* ATS Laser Scanner Effect */}
+      <rect x="75" y="140" width="270" height="80" fill="url(#scanGradient)" />
+      <line x1="75" y1="220" x2="345" y2="220" stroke="#10b981" strokeWidth="4" className="drop-shadow-md" />
+      
+      {/* Scanner Side Nodes */}
+      <circle cx="75" cy="220" r="5" fill="#047857" />
+      <circle cx="345" cy="220" r="5" fill="#047857" />
+
+      {/* Floating ATS Badge */}
+      <g transform="translate(230, 310)">
+        <rect width="115" height="42" rx="10" fill="white" stroke="#059669" strokeWidth="2" className="drop-shadow-lg" />
+        <rect width="115" height="42" rx="10" fill="url(#rp)" opacity="0.1" />
+        <text x="57" y="16" textAnchor="middle" fill="#047857" fontSize="10" fontWeight="bold" letterSpacing="1">ATS MATCH</text>
+        <text x="57" y="32" textAnchor="middle" fill="#059669" fontSize="16" fontWeight="900">99%</text>
+        <circle cx="20" cy="24" r="6" fill="#10b981" />
+        <path d="M 17 24 L 19 26 L 24 21" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
     </svg>
   );
 }
 
-export const illustrations = [DSAIllustration, HRIllustration, MockIllustration, ResumeIllustration];
+export const illustrations =[DSAIllustration, HRIllustration, MockIllustration, ResumeIllustration];
