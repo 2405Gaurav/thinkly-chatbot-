@@ -57,7 +57,15 @@ function HRIllustration() {
   );
 }
 
+type ScoreRow = [label: string, pct: number];
+
 function MockIllustration() {
+  const rows: ScoreRow[] = [
+    ["Technical", 0.9],
+    ["Communication", 0.75],
+    ["Problem Solving", 0.85],
+  ];
+
   return (
     <svg viewBox="0 0 420 420" className="w-full h-full drop-shadow-xl">
       <defs>
@@ -72,13 +80,19 @@ function MockIllustration() {
       </defs>
       <rect x="90" y="55" width="240" height="310" rx="16" fill="white" opacity="0.6" stroke="#ea580c" strokeWidth="1.5" strokeOpacity="0.3"/>
       <circle cx="210" cy="185" r="72" fill="none" stroke="#fed7aa" strokeWidth="14" opacity="0.5"/>
-      <circle cx="210" cy="185" r="72" fill="none" stroke="url(#mp)" strokeWidth="14"
-        strokeDasharray="452" strokeDashoffset="113" strokeLinecap="round" transform="rotate(-90 210 185)"/>
+      <circle
+        cx="210" cy="185" r="72"
+        fill="none" stroke="url(#mp)" strokeWidth="14"
+        strokeDasharray="452" strokeDashoffset="113"
+        strokeLinecap="round"
+        transform="rotate(-90 210 185)"
+      />
       <text x="210" y="178" textAnchor="middle" fill="#ea580c" fontSize="30" fontWeight="900">85</text>
       <text x="210" y="200" textAnchor="middle" fill="#c2410c" fontSize="11" fontWeight="600">/ 100</text>
       <text x="210" y="222" textAnchor="middle" fill="#f97316" fontSize="10">Score</text>
-      {[["Technical", 0.9], ["Communication", 0.75], ["Problem Solving", 0.85]].map(([label, pct], i) => (
-        <g key={i} transform={`translate(112, ${300 + i * 22})`}>
+
+      {rows.map(([label, pct], i) => (
+        <g key={label} transform={`translate(112, ${300 + i * 22})`}>
           <rect width="196" height="7" rx="3.5" fill="#fed7aa" opacity="0.5"/>
           <rect width={196 * pct} height="7" rx="3.5" fill="url(#mp)"/>
           <text x="0" y="-4" fill="#9a3412" fontSize="8.5" fontWeight="600">{label}</text>
@@ -89,6 +103,12 @@ function MockIllustration() {
 }
 
 function ResumeIllustration() {
+  const sections: { y: number; label: string; lw: number }[] = [
+    { y: 122, label: "Experience", lw: 62 },
+    { y: 212, label: "Education",  lw: 56 },
+    { y: 298, label: "Skills",     lw: 36 },
+  ];
+
   return (
     <svg viewBox="0 0 420 420" className="w-full h-full drop-shadow-xl">
       <defs>
@@ -107,18 +127,16 @@ function ResumeIllustration() {
       <circle cx="132" cy="73" r="20" fill="white" opacity="0.25"/>
       <rect x="162" y="60" width="108" height="10" rx="3" fill="white" opacity="0.75"/>
       <rect x="162" y="76" width="74" height="7" rx="3" fill="white" opacity="0.5"/>
-      {[
-        { y: 122, label: "Experience", lw: 62 },
-        { y: 212, label: "Education", lw: 56 },
-        { y: 298, label: "Skills", lw: 36 },
-      ].map(({ y, label, lw }) => (
+
+      {sections.map(({ y, label, lw }) => (
         <g key={label}>
-          <rect x="115" y={y} width={lw} height="8" rx="3" fill="#059669" opacity="0.7"/>
+          <rect x="115" y={y}      width={lw}  height="8" rx="3"   fill="#059669" opacity="0.7"/>
           <rect x="115" y={y + 18} width="185" height="5" rx="2.5" fill="#d1fae5"/>
           <rect x="115" y={y + 28} width="148" height="5" rx="2.5" fill="#d1fae5"/>
           <rect x="115" y={y + 38} width="168" height="5" rx="2.5" fill="#d1fae5"/>
         </g>
       ))}
+
       <rect x="258" y="355" width="65" height="19" rx="9.5" fill="#059669" opacity="0.85"/>
       <text x="290" y="368" textAnchor="middle" fill="white" fontSize="9" fontWeight="700">ATS ✓</text>
     </svg>
