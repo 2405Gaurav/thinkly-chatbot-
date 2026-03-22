@@ -107,7 +107,7 @@ export function HRIllustration() {
 
 type ScoreRow = [label: string, pct: number];
 
-export function MockIllustration() {
+export function MockIllustration(){
   const rows: ScoreRow[] = [
     ["Technical", 0.9],["Communication", 0.75],
     ["Problem Solving", 0.85],
